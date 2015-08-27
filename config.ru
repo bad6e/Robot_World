@@ -1,8 +1,4 @@
-require 'bundler'
-Bundler.require
+#Start with config.ru and look here and then go out and into config/environment
+require File.expand_path("../config/environment", __FILE__)
 
-$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/app"))
-
-require 'controllers/skill_inventory_app'
-
-run SkillInventoryApp
+run RobotWorldApp
