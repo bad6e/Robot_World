@@ -1,11 +1,28 @@
 require 'yaml/store'
+require 'sequel'
 
 class RobotInventory
   def self.database
     if ENV["RACK_ENV"] == "test"
-      @database ||= YAML::Store.new("db/robot_inventory_test")
+      @database ||= Sequel.sqlite("db/robot_inventory_test.sqlite3")
+      # @database ||= YAML::Store.new("db/robot_inventory_test")
     else
-      @database ||= YAML::Store.new("db/robot_inventory")
+      @database ||= Sequel.sqlite("db/robot_inventory_test.sqlite3")
+      # @database ||= YAML::Store.new("db/robot_inventory")
+    end
+  end
+
+  def self.create_table
+    robots = database.from(:robots).insert({:name => robot[:name], :city => robot[:city]             })
+
+    # database.create_table :robots do
+    #   primary_key :id
+    #   String :name
+    #   String :city
+    #   String :state
+    #   Integer :birthdate
+    #   Integer :date_hired
+    #   String :department
     end
   end
 
