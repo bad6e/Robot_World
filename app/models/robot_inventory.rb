@@ -1,4 +1,5 @@
 require 'sequel'
+require 'time'
 
 class RobotInventory
   def self.database
@@ -42,16 +43,32 @@ class RobotInventory
     Robot.new(raw_robot)
   end
 
-   def self.update(id, robot)
-    database.from(:robots).
-    where(:id => id).update(
-          :name => robot[:name],
-          :city => robot[:city],
-          :state => robot[:state],
-          :birthdate => robot[:birthdate],
-          :date_hired => robot[:date_hired],
-          :department => robot[:department])
+  def self.age(id)
+    current_date = Date.today.year
+    birth_date = find(id).birthdate.year
+    current_date - birth_date
+  end
+
+  def self.average_age
+    ages = all.map do |age|
+      Date.today.year - age.birthdate.year
     end
+    total = ages.inject(0, &:+)
+    if all.count > 0
+      total/all.count
+    end
+  end
+
+ def self.update(id, robot)
+  database.from(:robots).
+  where(:id => id).update(
+        :name => robot[:name],
+        :city => robot[:city],
+        :state => robot[:state],
+        :birthdate => robot[:birthdate],
+        :date_hired => robot[:date_hired],
+        :department => robot[:department])
+  end
 
   def self.delete(id)
     database.from(:robots).where(:id => id).delete
