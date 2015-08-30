@@ -1,20 +1,32 @@
 <form action="/robots" method = "post">
-  <p> Enter a name: </p>
-  <input type='text' name='robot[name]'/>
+  <h3>Enter the new robot's information below:</h3>
+  </br>
+  <h4> Enter a name: </h4>
+  <input type='text' name='robot[name]'/></br></br>
 
-  <p> Enter a city: </p>
-  <input type='text' name='robot[city]'/>
+  <h4> Enter a city: </h4>
+  <input type='text' name='robot[city]'/></br></br>
 
-  <p> Enter a state: </p>
-  <input type='text' name='robot[state]'/>
+  <h4> Enter a state: </h4>
+  <input type='text' name='robot[state]'/></br></br>
 
-  <p> Enter a birthdate: </p>
-  <input type='text' name='robot[birthdate]'/>
+  <h4> Enter a birthdate: </h4>
+  <input type='date' name='robot[birthdate]'/></br></br>
 
-  <p> Enter a date hired: </p>
-  <input type='text' name='robot[date_hired]'/>
+  <h4> Enter a date hired: </h4>
+  <input type='date' name='robot[date_hired]'/></br></br>
 
-  <p> Enter a department: </p>
-  <input type='text' name='robot[department]'/></br>
+  <h4> Enter a department: </h4>
+  <select name='robot[department]'>
+      <option value="Human Studies">Human Studies</option>
+      <option value="Space Exploration">Space Exploration</option>
+      <option value="War Office">War Office</option>
+      <option value="Agriculture" >Agriculture</option>
+  </select>
+  </br>
+  </br>
+
   <button type='submit'>Submit</button>
 </form>
+
+

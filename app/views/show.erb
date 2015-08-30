@@ -1,13 +1,44 @@
-<h1 id='robot_name_show'><%= @robot.name %></h1>
+<div class='container'>
+  <div class='row well'>
+    <div class='col-md-12'>
+      <h1 id='robot_name_show'>Robot Name: <%= @robot.name %></h1>
+    </div>
+  </div>
+</div>
 
-<img src="https://robohash.org/<%= @robot.id %>"></br>
+<div class='container'>
+  <div class='row well'>
+    <div class='col-md-12'>
+      <table class='table''table-bordered' 'table-hover'=>
+        <tr>
+          <th>City</th>
+          <th>State</th>
+          <th>Birth Date</th>
+          <th>Date Hired</th>
+          <th>Department</th>
+        </tr>
+        <tr>
+          <td><%= @robot.city %></td>
+          <td><%= @robot.state %></td>
+          <td><%= @robot.birthdate %></td>
+          <td><%= @robot.date_hired %></td>
+          <td><%= @robot.department %></td>
+        </tr>
+      </table>
+    </div>
 
-<h3><%= @robot.city %></h3>
-<h3><%= @robot.state %></h3>
-<h3><%= @robot.birthdate %></h3>
-<h3><%= @robot.date_hired %></h3>
-<h3><%= @robot.department %></h3>
+</div>
 
+ <div class='col-md-  '>
+      <img src="https://robohash.org/<%= @robot.id %>"></br>
+    </div>
+  </div>
 
-<a href="/robots" id='show_footer'>Robot Inventory</a>
+<div class='container'>
+  <div class='row well'>
+    <div class='col-md-6'>
+      <a href="/robots" id='show_footer'><h4>Robot Inventory</h4></a>
+    </div>
+  </div>
+</div>
 

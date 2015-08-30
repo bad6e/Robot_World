@@ -5,7 +5,7 @@ class RobotInventory
     if ENV["RACK_ENV"] == "test"
       @database ||= Sequel.sqlite("db/robot_inventory_test.sqlite3")
     else
-      @database ||= Sequel.sqlite("db/robot_inventory_test.sqlite3")
+      @database ||= Sequel.sqlite("db/robot_inventory.sqlite3")
     end
   end
 
@@ -15,8 +15,8 @@ class RobotInventory
       String :name
       String :city
       String :state
-      Integer :birthdate
-      Integer :date_hired
+      Date :birthdate
+      Date :date_hired
       String :department
     end
   end

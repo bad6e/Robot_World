@@ -6,16 +6,16 @@ class RobotTest < Minitest::Test
     attributes = {:name=>"R Daneel",
                  :city=> "Auroa",
                  :state => "Virginia",
-                 :birthdate=> 21888,
-                 :date_hired=> 21888,
+                 :birthdate=> '2015-08-12',
+                 :date_hired=> '2015-08-12',
                  :department=> "science"}
     robot = Robot.new(attributes)
 
     assert_equal "R Daneel", robot.name
     assert_equal "Auroa", robot.city
     assert_equal "Virginia", robot.state
-    assert_equal 21888, robot.birthdate
-    assert_equal 21888, robot.date_hired
+    assert_equal '2015-08-12', robot.birthdate
+    assert_equal '2015-08-12', robot.date_hired
     assert_equal "science", robot.department
   end
 end

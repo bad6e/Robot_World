@@ -1,33 +1,47 @@
 <div class='container'>
   <div class='row well'>
     <div class='col-md-12'>
-
     <h1 id='robot_headquarters'>Robot Headquarters</h1>
-
     </div>
   </div>
 </div>
 
+<div class='container'>
+  <div class='row well'>
+    <div class='col-md-12'>
+      <h2>Average Robot Age</h2>
+    </div>
+  </div>
+</div>
 
 <div class='container'>
   <div class='row well' id="robot_description">
+    <div class='col-md-12'>
+      <% @robots.each do |robot| %>
+        <h3><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
+        <img src="https://robohash.org/<%= robot.id %>" class="img-thumbnail"></br>
+        </br>
 
-<% @robots.each do |robot| %>
-  <h2><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h2>
-  <img src="https://robohash.org/<%= robot.id %>"></br>
-  <a href="/robots/<%= robot.id %>/edit">Edit</a>
-  <form action="/robots/<%= robot.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <button type="submit" value="delete">Delete</button>
-  </form>
+        <!--  Edit Button -->
+        <a href='/robots/<%= robot.id %>/edit'>
+        <button class="btn btn-default" type="submit">Edit</button></a>
 
-<% end %>
-
-</div>
+        <!-- Delete Button -->
+        <form action="/robots/<%= robot.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="btn btn-default" type="submit" value="delete">Delete</button>
+        </form>
+      <% end %>
+    </div>
+  </div>
 </div>
 </br>
-</br>
-
-<a href="/">Return to Robot World</a></br>
-<a href="/robots/new">Add a New Robot</a>
+<div class='container'>
+  <div class='row well'>
+    <div class='col-md-12'>
+      <a href="/">Return to Robot World</a></br>
+      <a href="/robots/new">Add a New Robot</a>
+    </div>
+  </div>
+</div>
 

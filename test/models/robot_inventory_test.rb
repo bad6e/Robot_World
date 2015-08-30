@@ -6,20 +6,20 @@ class RobotInventoryTest < Minitest::Test
     @attributes        = {:name=>"R Daneel",
                           :city=> "Auroa",
                           :state => "Virginia",
-                          :birthdate=> 21888,
-                          :date_hired=> 21888,
+                          :birthdate=> '2015-08-12',
+                          :date_hired=> '2015-08-12',
                           :department=> "science"}
     @attributes_two    = {:name=>"R Daneel 2",
                           :city=> "Auroa 2",
                           :state => "Colorado",
-                          :birthdate=> 21889,
-                          :date_hired=> 21889,
+                          :birthdate=> '2015-08-12',
+                          :date_hired=> '2015-08-12',
                           :department=> "science 2"}
     @attributes_three  = {:name=>"R Daneel 3",
                           :city=> "Auroa 3",
                           :state => "New Jersey",
-                          :birthdate=> 21990,
-                          :date_hired=> 21990,
+                          :birthdate=> '2015-08-12',
+                          :date_hired=> '2015-08-12',
                           :department=> "science 3"}
 
     @robot_1 = RobotInventory.create(@attributes)

@@ -1,6 +1,5 @@
 ENV["RACK_ENV"] ||= "test"
 
-
 #This sets up our test helper
 require File.expand_path("../../config/environment", __FILE__)
 require 'minitest/autorun'

@@ -1,24 +1,31 @@
 <form action="/robots/<%= @robot.id %>" method="post">
-  <h3>Edit</h3>
+  <h3>Edit the robot's information below:</h3>
   <input type="hidden" name="_method" value="PUT" />
-
-  <p>Name:</p>
-  <input type='text' name='robot[name]' value="<%= @robot.name %>"/><br/>
-
-  <p>City:</p>
-  <input type='text' name='robot[city]' value="<%= @robot.city %>"/><br/>
-
-  <p>State:</p>
-  <input type='text' name='robot[state]' value="<%= @robot.state %>"/><br/>
-
-  <p>Birthdate:</p>
-  <input type='text' name='robot[birthdate]' value="<%= @robot.birthdate %>"/><br/>
-
-  <p>Date Hired:</p>
-  <input type='text' name='robot[date_hired]' value="<%= @robot.date_hired %>"/><br/>
-
-  <p>Department:</p>
-  <input type='text' name='robot[department]' value="<%= @robot.department %>"/><br/>
   </br>
+  <h4>Name:</h4>
+  <input type='text' name='robot[name]' value="<%= @robot.name %>"/><br/><br/>
+
+  <h4>City:</h4>
+  <input type='text' name='robot[city]' value="<%= @robot.city %>"/><br/><br/>
+
+  <h4>State:</h4>
+  <input type='text' name='robot[state]' value="<%= @robot.state %>"/><br/><br/>
+
+  <h4>Birthdate:</h4>
+  <input type='date' name='robot[birthdate]' value="<%= @robot.birthdate %>"/><br/><br/>
+
+  <h4>Date Hired:</h4>
+  <input type='date' name='robot[date_hired]' value="<%= @robot.date_hired %>"/><br/><br/>
+
+  <h4>Department:</h4>
+  <select name='robot[department]'>
+      <option value="Human Studies">Human Studies</option>
+      <option value="Space Exploration">Space Exploration</option>
+      <option value="War Office">War Office</option>
+      <option value="Agriculture" >Agriculture</option>
+  </select>
+  </br>
+  </br>
+
   <button type='submit'>Submit</button>
 </form>
