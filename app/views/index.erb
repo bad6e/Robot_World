@@ -10,8 +10,7 @@
 
 
 <div class='container'>
-  <div class='row well'>
-
+  <div class='row well' id="robot_description">
 
 <% @robots.each do |robot| %>
   <h2><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h2>
